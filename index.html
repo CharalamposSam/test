@@ -55,7 +55,55 @@
 
         /* if ( window.innerWidth === 2388 / 2 && window.innerHeight === 1668 / 2 ) document.querySelector( 'div' ).innerText = 'aaaa'
         document.querySelector( 'div' ).innerText = window.innerWidth + ' ' + window.innerHeight  */
-        document.querySelector( 'div' ).innerText = window.devicePixelRatio
-    </script>
+       
+       
+       // document.querySelector( 'div' ).innerText = window.devicePixelRatio
+
+
+       var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    },
+    none: function() {
+        return (!isMobile.any());
+    }
+ 
+};
+
+if (isMobile.any()){
+        document.write('Mobile');
+        if (isMobile.iOS()){
+            document.write('/iOS');
+        } else if (isMobile.Android()){
+            document.write('/Android');
+        } else if (isMobile.BlackBerry()){
+            document.write('/BlackBerry');
+        } else if (isMobile.Windows()){
+            document.write('/Windows');
+        } else {
+            document.write('/other');
+        }
+    } else if (isMobile.none()) {
+        document.write('non-mobile');
+    } else {
+        document.write('unknown');
+    }
+       
+       </script>
 </body>
 </html>

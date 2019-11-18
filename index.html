@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    stgbbu
     <div></div>
     <script>
        /*  var isMobile = false;
@@ -48,12 +47,13 @@
 
         document.querySelector( 'div' ).innerText = isIpadPro() + ' ' + window.innerWidth + ' ' + window.innerHeight + ' ' + navigator.userAgent
          */
-        if ( navigator.userAgent === '(Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36' ) {
+        /* if ( navigator.userAgent === '(Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36' ) {
             document.querySelector( 'div' ).innerText = 'Ipad 11 pro'
         } else {
             document.querySelector( 'div' ).innerText = 'somthing else'
-        }
+        } */
 
+        if ( window.innerWidth === 2388 / 2 && window.innerHeight === 1668 / 2 ) document.querySelector( 'div' ).innerText = 'aaaa'
     
     </script>
 </body>

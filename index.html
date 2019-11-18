@@ -36,7 +36,7 @@
         detectmob() */
 
 
-        function isIpadPro() {
+       /*  function isIpadPro() {
             var ratio = window.devicePixelRatio || 1;
             var screen = {
                 width : window.screen.width * ratio,
@@ -46,6 +46,14 @@
         }
 
         document.querySelector( 'div' ).innerText = isIpadPro() + ' ' + window.innerWidth + ' ' + window.innerHeight + ' ' + navigator.userAgent
+         */
+        if ( navigator.userAgent === '(Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36' ) {
+            document.querySelector( 'div' ).innerText = 'Ipad 11 pro' + ' ' + screen.orientation.type
+        } else {
+            document.querySelector( 'div' ).innerText = 'somthing else' + ' ' + screen.orientation.type
+        }
+
+    
     </script>
 </body>
 </html>

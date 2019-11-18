@@ -17,7 +17,7 @@
 
         console.log( isMobile ) */
 
-        function detectmob() { 
+        /* function detectmob() { 
         if( navigator.userAgent.match(/Android/i)
         || navigator.userAgent.match(/webOS/i)
         || navigator.userAgent.match(/iPhone/i)
@@ -33,8 +33,19 @@
             return false;
         }
         }
-        detectmob()
-        //document.querySelector( 'div' ).innerText = 'whbviwh'
+        detectmob() */
+
+
+        function isIpadPro() {
+            var ratio = window.devicePixelRatio || 1;
+            var screen = {
+                width : window.screen.width * ratio,
+                height : window.screen.height * ratio
+            };
+            return (screen.width === 2048 && screen.height === 2732) || (screen.width === 2732 && screen.height === 2048) || (screen.width === 1536 && screen.height === 2048) || (screen.width === 2048 && screen.height === 1536);
+        }
+
+        document.querySelector( 'div' ).innerText = isIpadPro()
     </script>
 </body>
 </html>

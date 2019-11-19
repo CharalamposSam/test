@@ -112,24 +112,31 @@ var ipad_safari = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605
 var ipad_chrome = 'Mozilla/5.0 (iPad; CPU OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/78.0.3904.84 Mobile/15E148 Safari/604.1'
 var ipad_opera = 'Mozilla/5.0 (iPad; CPU OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) OPT/2.0 Mobile/15E148'
 var ipad_firefox = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko)'
+
+let orient, orient_flag
 if ( navigator.userAgent === ipad_safari || navigator.userAgent === ipad_chrome || navigator.userAgent === ipad_opera || navigator.userAgent === ipad_firefox ) {
-    let orient
     if ( window.innerWidth > window.innerHeight ) {
         orient = 'landscape'
+        orient_flag = false
     } else {
         orient = 'portrait'
+        orient_flag = true
     }
     document.write( 'ipad pro ' + orient )
 } else {
     document.write( 'something else' )
 }
+
+
 window.addEventListener( 'orientationchange', () => {
-    let orient
-    if ( window.innerWidth > window.innerHeight ) {
+    if (orient_flag ) {
         orient = 'landscape'
+        orient_flag = false
     } else {
         orient = 'portrait'
+        orient_flag = true
     }
+   
     document.write( 'ipad pro ' + orient )
 } )
 

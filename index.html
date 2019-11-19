@@ -103,15 +103,26 @@
         document.write('unknown');
     } */
 
-/* var test = navigator.userAgent*/
-document.write( navigator.userAgent ) 
+/* var test = navigator.userAgent
+document.write( navigator.userAgent ) */
 
 
 // WORKING!!!!!
-/* var ipad_safari = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15'
+var ipad_safari = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15'
 var ipad_chrome = 'Mozilla/5.0 (iPad; CPU OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/78.0.3904.84 Mobile/15E148 Safari/604.1'
-if ( navigator.userAgent === ipad_safari || navigator.userAgent === ipad_chrome ) document.write( 'ipad pro' )
- */
+var ipad_opera = 'Mozilla/5.0 (iPad; CPU OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) OPT/2.0 Mobile/15E148'
+var ipad_firefox = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko)'
+if ( navigator.userAgent === ipad_safari || navigator.userAgent === ipad_chrome || navigator.userAgent === ipad_opera || navigator.userAgent === ipad_firefox ) {
+    let orient
+    if ( window.innerWidth > window.innerHeight ) {
+        orient = 'landscape'
+    } else {
+        orient = 'portrait'
+    }
+    document.write( 'ipad pro ' + orient )
+}
+
+
        
        </script>
 </body>

@@ -124,15 +124,12 @@ if ( navigator.userAgent === ipad_safari || navigator.userAgent === ipad_chrome 
     document.write( 'something else' )
 }
 window.addEventListener( 'orientationchange', () => {
-    document.write( screen.orientation.type )
-
     let orient
     if ( window.innerWidth > window.innerHeight ) {
         orient = 'landscape'
     } else {
         orient = 'portrait'
     }
-    //document.write( screen.orientation.type )
     document.write( 'ipad pro ' + orient )
 } )
 

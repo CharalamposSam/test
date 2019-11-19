@@ -118,9 +118,11 @@ if ( navigator.userAgent === ipad_safari || navigator.userAgent === ipad_chrome 
     if ( window.innerWidth > window.innerHeight ) {
         orient = 'landscape'
         orient_flag = false
+        document.body.style.background = 'green'
     } else {
         orient = 'portrait'
         orient_flag = true
+        document.body.style.background = 'red'
     }
     document.write( 'ipad pro ' + orient )
 } else {
@@ -132,12 +134,15 @@ window.addEventListener( 'orientationchange', () => {
     if (orient_flag ) {
         orient = 'landscape'
         orient_flag = false
+        document.body.style.background = 'green'
     } else {
         orient = 'portrait'
         orient_flag = true
+        document.body.style.background = 'red'
     }
    
-    document.write( 'ipad pro ' + orient )
+    //document.write( 'ipad pro ' + orient )
+    
 } )
 
        

@@ -108,7 +108,7 @@ document.write( navigator.userAgent ) */
 
 
 // WORKING!!!!!
-/* var ipad_safari = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15'
+/var ipad_safari = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15'
 var ipad_chrome = 'Mozilla/5.0 (iPad; CPU OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/78.0.3904.84 Mobile/15E148 Safari/604.1'
 var ipad_opera = 'Mozilla/5.0 (iPad; CPU OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) OPT/2.0 Mobile/15E148'
 var ipad_firefox = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko)'
@@ -117,22 +117,25 @@ let orient
 if ( navigator.userAgent === ipad_safari || navigator.userAgent === ipad_chrome || navigator.userAgent === ipad_opera || navigator.userAgent === ipad_firefox ) {
     if ( window.innerWidth > window.innerHeight ) {
         orient = 'landscape'
-    } else {
-        orient = 'portrait'
-    }
-    document.write( 'ipad pro ' + orient )
-} else {
-    document.write( 'something else' )
-} */
-
-
-window.addEventListener( 'orientationchange', () => {
-    if ( window.innerWidth > window.innerHeight ) {
         document.body.style.background = 'green'
     } else {
+        orient = 'portrait'
         document.body.style.background = 'red'
     }
-} )
+    document.write( 'ipad pro' )
+    window.addEventListener( 'orientationchange', () => {
+        if ( window.innerWidth > window.innerHeight ) {
+            document.body.style.background = 'green'
+        } else {
+            document.body.style.background = 'red'
+        }
+    } )
+} else {
+    document.write( 'something else' )
+} 
+
+
+
 
        
        </script>

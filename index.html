@@ -123,7 +123,9 @@ if ( navigator.userAgent === ipad_safari || navigator.userAgent === ipad_chrome 
 } else {
     document.write( 'something else' )
 }
-
+window.addEventListener( 'orientationchange', () => {
+    document.write( 'orient change' )
+} )
 
        
        </script>
